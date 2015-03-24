@@ -42,17 +42,21 @@ User.create(name: "Bradford Nemmers", email: "bnems@test.com", gender: "male", r
 # User.create(name: "Bum Bum", email: "bum@test.com", age: 36, gender: "male",
 #                         rel_type: "dating", orientation: "female", location: "90401", radius: 10);    
 # Match
-User.create(name: "Jenni MacArthur", email: "jenni@test.com", gender: "female", rel_type: "dating", orientation: "male",
-						location: "90404", radius: 10);
-# Not a match (Distance);
-User.create(name: "Samantha Cole", email: "sam@test.com", gender: "female", rel_type: "dating", orientation: "male",
-						location: "92037", radius: 15);
-# Not a match (Rel Type)
-User.create(name: "Susan B. Anthony", email: "susan@test.com", gender: "female", rel_type: "friendship", orientation: "both",
-						location: "90034", radius: 25);
-# Not a match (Orientation -> Gender)
-User.create(name: "Steve Jones", email: "steve@test.com", gender: "male", rel_type: "dating", orientation: "female",
-						location: "90046", radius: 10);
-# Not a match
-User.create(name: "Susan B. Anthony", email: "susan@test.com", gender: "female", rel_type: "friendship", orientation: "both",
-						location: "90035", radius: 25);                                                                          
+200.times do
+
+	User.create(name: Random.rand(500).to_s, email: "jenni@test.com", gender: "female", rel_type: "dating", orientation: "male",
+							location: "90404", radius: 10);
+	# Not a match (Distance);
+	User.create(name: "Samantha Cole", email: "sam@test.com", gender: "female", rel_type: "dating", orientation: "male",
+							location: "92037", radius: 15);
+	# Not a match (Rel Type)
+	User.create(name: "Susan B. Anthony", email: "susan@test.com", gender: "female", rel_type: "friendship", orientation: "both",
+							location: "90034", radius: 25);
+	# Not a match (Orientation -> Gender)
+	User.create(name: "Steve Jones", email: "steve@test.com", gender: "male", rel_type: "dating", orientation: "female",
+							location: "90046", radius: 10);
+	# Not a match
+	User.create(name: "Susan B. Anthony", email: "susan@test.com", gender: "female", rel_type: "friendship", orientation: "both",
+							location: "90035", radius: 25);  
+
+end                                                                        

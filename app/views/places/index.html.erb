@@ -1,3 +1,17 @@
+<script>
+// Make sure our code runs after the page is fully rendered
+  $(function(){
+    // Go grab places names in an array
+    $.get("/places.json", function(places){
+      // Set up the autocomplete
+      $( "#tags" ).autocomplete({
+        // Have the source be the incoming places array
+        source: places
+      });
+    });
+  });
+</script>
+
 <form class="test" id="test1">
   <input type="text" id="yelp_loc" placeholder="Search Area"><br><br>
   <input type="text" id="yelp_bus1" placeholder="Favorite Location">
@@ -7,6 +21,7 @@
 <form class="hidden test" id="test2">
   <input type="text" id="yelp_bus2" placeholder="Second Favorite Location">
   <input class="button" id="button2" type="submit" value="Submit" >
+  <div class="tip" id="yelp_bus2" style="margin-left:100px;">
 </form>
 <br><br>
 <form class="hidden test" id="test3">
