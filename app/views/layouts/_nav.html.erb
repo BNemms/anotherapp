@@ -26,9 +26,10 @@
           <% if @user != nil %>
             <li> <%#= link_to "Home", show_user_path %></li>
             <li> <%= link_to "Edit Profile", users_path %> </li>
-            <li> <%= link_to "My Events", events_path %> </li>
+            <li> <%= link_to "My Match", matches_path %> </li>
+            <li> <%= link_to "Mine", match_events_path %> </li>
             <li> <%= link_to "Find Places", places_path %> </li>
-            <li> <%= link_to "Events", events_path %> </li>
+            <li> <%= link_to "Match Event", photos_path %> </li>
             <div class = "user", "matches", "events" ></div>
       <% else %>
             <li> <%= link_to "Log In", new_user_path, method: :get %></li>

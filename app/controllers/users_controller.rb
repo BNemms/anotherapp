@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @users = User.find(params[:id])
+
   end
 
   # GET /users/new
@@ -66,7 +67,7 @@ end
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update(user_params, avatar_file_name)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         # format.json { render :show, status: :ok, location: @user }
       else
@@ -90,11 +91,11 @@ end
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
-      
+     # @photo = User.find(user_params[:avatar_file_name])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :age, :avatar, :gender, :rel_type, :location, :radius, :fb_id, :orientation)
+      params.require(:user).permit(:name, :email, :age, :avatar, :avatar_file_name, :gender, :rel_type, :location, :radius, :fb_id, :orientation)
     end 
 end
